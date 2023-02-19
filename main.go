@@ -25,7 +25,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	algorithm := crypto.SHA3_256
+	algorithm := crypto.SHA256
 
 	if len(args) > 3 {
 		switch hf := args[3]; hf {
@@ -35,7 +35,7 @@ func main() {
 		case "md5":
 			algorithm = crypto.MD5
 		case "sha512":
-			algorithm = crypto.SHA3_512
+			algorithm = crypto.SHA512
 		default:
 			fmt.Printf("Hashing algorithm %v not supported.\n", hf)
 			os.Exit(1)
