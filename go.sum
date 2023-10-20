@@ -1,2 +1,2 @@
-go.lorenzomilicia.dev/libs v1.1.3 h1:SUnJd0gIHvJu5pMnrwlZyx5mvEykOBvOvL6kctpSN74=
-go.lorenzomilicia.dev/libs v1.1.3/go.mod h1:qO5UlAT2MbrojtjFdON5OxHXiDl3m5EIs1d6sASyQgk=
+go.lorenzomilicia.dev/libs/checksum v0.0.1 h1:JbzSbLZ+BEepbHX5+aTky6C6NbFJLx6HFE4m1Su/B30=
+go.lorenzomilicia.dev/libs/checksum v0.0.1/go.mod h1:1HMPTq7E+3r+U3/pDS4Pq3m7jn1aCFxZ6UgZKxPCva8=
