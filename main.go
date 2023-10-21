@@ -9,7 +9,7 @@ import (
 	"errors"
 	"flag"
 	"fmt"
-	"go.lorenzomilicia.dev/checksum-checker/app"
+	"go.lorenzomilicia.dev/lmchecksum/app"
 	"os"
 )
 
@@ -39,16 +39,21 @@ func (h *hashingAlgorithmFlag) Set(s string) error {
 
 func main() {
 	algFlag := hashingAlgorithmFlag{crypto.SHA256}
-	var hashFlag string
 	flag.Var(&algFlag, "algorithm", "Hashing algorithm for the check (default is SHA256)")
-	flag.StringVar(&hashFlag, "hash", "", "Hash to compare")
 	flag.Parse()
+
+	if flag.NArg() != 2 {
+		fmt.Println("Expecting exactly two arguments (<file> <checksum>")
+		os.Exit(1)
+	}
+
 	fileArg := flag.Arg(0)
 	if fileArg == "" {
 		fmt.Println("Expecting a file path")
 		os.Exit(1)
 	}
-	if hashFlag == "" {
+	checksumArg := flag.Arg(1)
+	if checksumArg == "" {
 		fmt.Println("Expecting a hash string to compare")
 		os.Exit(1)
 	}
@@ -57,7 +62,7 @@ func main() {
 		fmt.Printf("%v", err)
 		os.Exit(1)
 	}
-	appArgs := app.New(file, hashFlag, algFlag.algorithm)
+	appArgs := app.New(file, checksumArg, algFlag.algorithm)
 	app.VerifyChecksum(appArgs)
 	os.Exit(0)
 }

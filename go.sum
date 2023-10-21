@@ -2,3 +2,5 @@ go.lorenzomilicia.dev/libs/checksum v0.0.1 h1:JbzSbLZ+BEepbHX5+aTky6C6NbFJLx6HFE
 go.lorenzomilicia.dev/libs/checksum v0.0.1/go.mod h1:1HMPTq7E+3r+U3/pDS4Pq3m7jn1aCFxZ6UgZKxPCva8=
 go.lorenzomilicia.dev/libs/checksum v0.0.2-0.20231021124723-31c54fcb7e41 h1:fz0KYorIKx2/K8ZJdf/HRGXJp7XoMrWY7izn8ME9S+Y=
 go.lorenzomilicia.dev/libs/checksum v0.0.2-0.20231021124723-31c54fcb7e41/go.mod h1:1HMPTq7E+3r+U3/pDS4Pq3m7jn1aCFxZ6UgZKxPCva8=
+go.lorenzomilicia.dev/libs/checksum v1.0.0 h1:XaVRlS4r0vVa7B+5xCZUMXQqDRFvCjSrVsPrs1Sz7dg=
+go.lorenzomilicia.dev/libs/checksum v1.0.0/go.mod h1:1HMPTq7E+3r+U3/pDS4Pq3m7jn1aCFxZ6UgZKxPCva8=
