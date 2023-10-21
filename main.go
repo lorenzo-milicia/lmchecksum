@@ -43,20 +43,13 @@ func main() {
 	flag.Parse()
 
 	if flag.NArg() != 2 {
-		fmt.Println("Expecting exactly two arguments (<file> <checksum>")
+		fmt.Println("Expecting exactly two arguments (<file> <checksum>)")
 		os.Exit(1)
 	}
 
 	fileArg := flag.Arg(0)
-	if fileArg == "" {
-		fmt.Println("Expecting a file path")
-		os.Exit(1)
-	}
 	checksumArg := flag.Arg(1)
-	if checksumArg == "" {
-		fmt.Println("Expecting a hash string to compare")
-		os.Exit(1)
-	}
+
 	file, err := os.Open(fileArg)
 	if err != nil {
 		fmt.Printf("%v", err)
