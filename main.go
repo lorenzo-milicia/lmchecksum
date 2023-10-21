@@ -52,7 +52,7 @@ func main() {
 
 	file, err := os.Open(fileArg)
 	if err != nil {
-		fmt.Printf("%v", err)
+		fmt.Printf("%v\n", err)
 		os.Exit(1)
 	}
 	appArgs := app.New(file, checksumArg, algFlag.algorithm)
