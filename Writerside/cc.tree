@@ -3,7 +3,7 @@
         SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
 
 <instance-profile id="cc"
-                 name="Checksum Checker"
+                 name="lmchecksum"
                  start-page="About.md">
 
     <toc-element topic="About.md"/>
