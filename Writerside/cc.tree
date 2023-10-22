@@ -4,8 +4,8 @@
 
 <instance-profile id="cc"
                  name="Checksum Checker"
-                 start-page="README.md">
+                 start-page="About.md">
 
     <toc-element topic="Examples.md"/>
-    <toc-element topic="README.md"/>
+    <toc-element topic="About.md"/>
 </instance-profile>
