@@ -6,6 +6,6 @@
                  name="Checksum Checker"
                  start-page="About.md">
 
-    <toc-element topic="Examples.md"/>
     <toc-element topic="About.md"/>
+    <toc-element topic="Examples.md"/>
 </instance-profile>
