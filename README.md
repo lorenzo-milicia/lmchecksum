@@ -17,4 +17,4 @@ lmchecksum <file name> <checksum>
 ```
 > The default hashing function used is *SHA-256*
 
-Full documentation can be found [here] (https://github.lorenzomilicia.dev/lmchecksum)
+To read more check the [full documentation](https://github.lorenzomilicia.dev/lmchecksum).
