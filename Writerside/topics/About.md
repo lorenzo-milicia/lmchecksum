@@ -19,11 +19,8 @@ The command to run is:
 ## Hashing functions
 
 The default hashing function used is *SHA-256*, but you can override it with the option `-algorithm`. The current list of available algorithms is:
-* SHA-256
-* SHA-1
-* SHA-512
-* MD5
-| Hashing Function | Option value |
+
+| Hashing Function | `-algorithm` value |
 | ---------------- | ------------ |
 | SHA-256          | sha256       |
 | SHA-1            | sha1         |
