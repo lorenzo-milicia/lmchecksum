@@ -18,8 +18,14 @@ The command to run is:
 > The default hashing function used is *SHA-256*
 ## Hashing functions
 
-The default hashing function used is *SHA-256*, but you can override it with the flag `-algorithm`. The current list of available algorithms is:
+The default hashing function used is *SHA-256*, but you can override it with the option `-algorithm`. The current list of available algorithms is:
 * SHA-256
 * SHA-1
 * SHA-512
 * MD5
+| Hashing Function | Option value |
+| ---------------- | ------------ |
+| SHA-256          | sha256       |
+| SHA-1            | sha1         |
+| SHA-512          | sha512       |
+| MD5              | md5          |
