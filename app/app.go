@@ -23,8 +23,8 @@ func New(file io.Reader, hash string, algorithm crypto.Hash) Arguments {
 
 func VerifyChecksum(args Arguments) {
 	if res := checksum.Checksum(args.File, args.Hash, args.Algorithm); res == true {
-		fmt.Print("It checks out ✅\n")
+		fmt.Print("[✓] The checksum matches\n")
 	} else {
-		fmt.Printf("Checksums don't match ❌\n")
+		fmt.Printf("[x] The checksum doesn't match\n")
 	}
 }
