@@ -8,8 +8,8 @@ Let's verify the checksum of the compressed source code of the [%version% releas
 $ ls
 %version%.tar.gz
 $ sha256sum %version%.tar.gz
-9ec0bed7e084cdabd5c1d49566622e463dbdd3492fe869fff960667c70751aa6 lmchecksum %version%.tar.gz
-$ lmchecksum %version%.tar.gz 9ec0bed7e084cdabd5c1d49566622e463dbdd3492fe869fff960667c70751aa6
+a1a2cc03f7aa392fe03109aeceeaec396c4fb0dd1f58c0e5b5f70ebaa0e988a8 lmchecksum %version%.tar.gz
+$ lmchecksum %version%.tar.gz a1a2cc03f7aa392fe03109aeceeaec396c4fb0dd1f58c0e5b5f70ebaa0e988a8
 [✓] The checksum matches
 $ lmchecksum %version%.tar.gz "a wrong checksum"                                                
 [x] The checksum doesn't match
