@@ -1,6 +1,7 @@
 # Examples
 
 Let's verify the checksum of the compressed source code of the [%version% release](https://github.com/lorenzo-milicia/lmchecksum/archive/refs/tags/%version%.tar.gz)
+
 <img src="checksum.gif" alt="Checksum" border-effect="rounded"/>
 
 ```Bash
