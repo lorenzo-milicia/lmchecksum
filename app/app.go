@@ -10,10 +10,10 @@ import (
 type Arguments struct {
 	File      io.Reader
 	Hash      string
-	Algorithm crypto.Hash
+	Algorithm string
 }
 
-func New(file io.Reader, hash string, algorithm crypto.Hash) Arguments {
+func New(file io.Reader, hash string, algorithm string) Arguments {
 	return Arguments{
 		File:      file,
 		Hash:      hash,
@@ -22,9 +22,25 @@ func New(file io.Reader, hash string, algorithm crypto.Hash) Arguments {
 }
 
 func VerifyChecksum(args Arguments) {
-	if res := checksum.Checksum(args.File, args.Hash, args.Algorithm); res == true {
+	hf := hashFunction(args.Algorithm)
+	if res := checksum.Checksum(args.File, args.Hash, hf); res == true {
 		fmt.Println("[✓] The checksum matches")
 	} else {
 		fmt.Println("[x] The checksum doesn't match")
+	}
+}
+
+func hashFunction(s string) crypto.Hash {
+	switch s {
+	case "sha256":
+		return crypto.SHA256
+	case "sha1":
+		return crypto.SHA1
+	case "md5":
+		return crypto.MD5
+	case "sha512":
+		return crypto.SHA512
+	default:
+		panic(fmt.Sprintf("Hash function %v not supported", s))
 	}
 }
