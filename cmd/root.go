@@ -1,11 +1,19 @@
 package cmd
 
 import (
+	"errors"
 	"fmt"
 	"go.lorenzomilicia.dev/lmchecksum/app"
 	"os"
+	"slices"
+	"strings"
 
 	"github.com/spf13/cobra"
+)
+
+// flags
+var (
+	hfFlag hashFunctionFlag = hashFunctionFlag{hashFunction: "sha256"}
 )
 
 var rootCmd = &cobra.Command{
@@ -19,10 +27,6 @@ var rootCmd = &cobra.Command{
 
 func lmchecksum() func(cmd *cobra.Command, args []string) {
 	return func(cmd *cobra.Command, args []string) {
-		hashFuncFlag, err := cmd.Flags().GetString("hash-func")
-		if err != nil {
-			panic(err)
-		}
 		fileArg := args[0]
 		checksumArg := args[1]
 
@@ -31,7 +35,7 @@ func lmchecksum() func(cmd *cobra.Command, args []string) {
 			fmt.Printf("%v\n", err)
 			os.Exit(1)
 		}
-		appArgs := app.New(file, checksumArg, hashFuncFlag)
+		appArgs := app.New(file, checksumArg, hfFlag.hashFunction)
 		app.VerifyChecksum(appArgs)
 		os.Exit(0)
 	}
@@ -45,5 +49,31 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.Flags().StringP("hash-func", "f", "sha256", "Hash function to use for the check")
+	rootCmd.Flags().VarP(
+		&hfFlag,
+		"hash-func",
+		"f",
+		fmt.Sprintf("supported: %v", strings.Join(app.SupportedHashFunctions, ", ")),
+	)
+	rootCmd.Flags().String("algorithm", "", "Hash function to use for the check")
+	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
+}
+
+type hashFunctionFlag struct {
+	hashFunction string
+}
+
+func (h *hashFunctionFlag) String() string {
+	return h.hashFunction
+}
+func (h *hashFunctionFlag) Type() string {
+	return "enum"
+}
+
+func (h *hashFunctionFlag) Set(s string) error {
+	if !slices.Contains(app.SupportedHashFunctions, s) {
+		return errors.New(fmt.Sprintf("must be one of %v", strings.Join(app.SupportedHashFunctions, ", ")))
+	}
+	h.hashFunction = s
+	return nil
 }

@@ -7,17 +7,24 @@ import (
 	"io"
 )
 
+var SupportedHashFunctions = []string{
+	"sha1",
+	"sha256",
+	"sha512",
+	"md5",
+}
+
 type Arguments struct {
 	File      io.Reader
 	Hash      string
 	Algorithm string
 }
 
-func New(file io.Reader, hash string, algorithm string) Arguments {
+func New(file io.Reader, hash string, hashFunction string) Arguments {
 	return Arguments{
 		File:      file,
 		Hash:      hash,
-		Algorithm: algorithm,
+		Algorithm: hashFunction,
 	}
 }
 
