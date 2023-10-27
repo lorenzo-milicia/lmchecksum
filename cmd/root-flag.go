@@ -1,13 +1,37 @@
-package app
+package cmd
 
 import (
 	"crypto"
+	"errors"
 	"fmt"
-	"go.lorenzomilicia.dev/libs/checksum"
-	"io"
 	"regexp"
+	"slices"
 	"strings"
 )
+
+var (
+	hfFlag = hashFunctionFlag{"sha256"}
+)
+
+type hashFunctionFlag struct {
+	hashFunction string
+}
+
+func (h *hashFunctionFlag) String() string {
+	return h.hashFunction
+}
+func (h *hashFunctionFlag) Type() string {
+	return ""
+}
+
+func (h *hashFunctionFlag) Set(s string) error {
+	ha := HashNamesMap[s]
+	if !slices.Contains(AvailableHashFunctions, uint(ha)) {
+		return errors.New(fmt.Sprintf("hash function %v not availalble", s))
+	}
+	h.hashFunction = s
+	return nil
+}
 
 var AvailableHashFunctions = func() []uint {
 	var hashes []uint
@@ -29,26 +53,3 @@ var HashNamesMap = func() map[string]crypto.Hash {
 	}
 	return m
 }()
-
-type Arguments struct {
-	File      io.Reader
-	Hash      string
-	Algorithm string
-}
-
-func New(file io.Reader, hash string, hashFunction string) Arguments {
-	return Arguments{
-		File:      file,
-		Hash:      hash,
-		Algorithm: hashFunction,
-	}
-}
-
-func VerifyChecksum(args Arguments) {
-	hf := HashNamesMap[args.Algorithm]
-	if res := checksum.Checksum(args.File, args.Hash, hf); res == true {
-		fmt.Println("[✓] The checksum matches")
-	} else {
-		fmt.Println("[x] The checksum doesn't match")
-	}
-}
