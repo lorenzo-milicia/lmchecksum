@@ -4,7 +4,6 @@ import (
 	"fmt"
 	"github.com/spf13/cobra"
 	"go.lorenzomilicia.dev/libs/checksum"
-	"go.lorenzomilicia.dev/lmchecksum/cmd/list"
 	"os"
 )
 
@@ -45,7 +44,7 @@ func Execute() {
 
 func init() {
 	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
-	rootCmd.AddCommand(list.Command)
+	rootCmd.AddCommand(Command)
 	rootCmd.Flags().VarP(&hfFlag, "hash-func", "f", "run \"lmchecksum list\" to see the full list of available hash functions")
 	rootCmd.Flags().Var(&hfFlag, "algorithm", "run \"lmchecksum list\" to see the full list of available hash functions")
 	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
