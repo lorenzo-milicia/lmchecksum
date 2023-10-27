@@ -21,21 +21,20 @@ var rootCmd = &cobra.Command{
 	Long:    "CLI tool for checking the validity of a checksum",
 	Args:    cobra.ExactArgs(2),
 	Version: "1.1.0",
-	Run:     lmchecksum,
+	RunE:    lmchecksum,
 }
 
-func lmchecksum(_ *cobra.Command, args []string) {
+func lmchecksum(_ *cobra.Command, args []string) error {
 	fileArg := args[0]
 	checksumArg := args[1]
 
 	file, err := os.Open(fileArg)
 	if err != nil {
-		fmt.Printf("%v\n", err)
-		os.Exit(1)
+		return err
 	}
 	appArgs := app.New(file, checksumArg, hfFlag.hashFunction)
 	app.VerifyChecksum(appArgs)
-	os.Exit(0)
+	return nil
 }
 
 func Execute() {
@@ -60,6 +59,8 @@ func init() {
 		"run \"lmchecksum list\" to see the full list of available hash functions",
 	)
 	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
+	rootCmd.MarkFlagsMutuallyExclusive("hash-func", "algorithm")
+	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
 }
 
 type hashFunctionFlag struct {

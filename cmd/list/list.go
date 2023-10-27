@@ -11,8 +11,8 @@ import (
 
 var Command = &cobra.Command{
 	Use:   "list",
-	Short: "See list of available hash functions",
-	Long:  "See list of available hash functions",
+	Short: "Print list of available hash functions",
+	Long:  "Print list of available hash functions",
 	Args:  cobra.NoArgs,
 	Run: func(cmd *cobra.Command, args []string) {
 		for _, h := range app.AvailableHashFunctions {
