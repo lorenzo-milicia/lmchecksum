@@ -49,4 +49,5 @@ func init() {
 	rootCmd.Flags().Var(&hfFlag, "algorithm", "run \"lmchecksum list\" to see the full list of available hash functions")
 	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
 	rootCmd.MarkFlagsMutuallyExclusive("hash-func", "algorithm")
+	rootCmd.CompletionOptions.DisableDefaultCmd = true
 }
