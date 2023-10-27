@@ -45,8 +45,8 @@ func Execute() {
 func init() {
 	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
 	rootCmd.AddCommand(Command)
-	rootCmd.Flags().VarP(&hfFlag, "hash-func", "f", "run \"lmchecksum list\" to see the full list of available hash functions")
-	rootCmd.Flags().Var(&hfFlag, "algorithm", "run \"lmchecksum list\" to see the full list of available hash functions")
+	rootCmd.Flags().VarP(&hfFlag, "hash-func", "f", "set the hash function to use")
+	rootCmd.Flags().Var(&hfFlag, "algorithm", "set the hash function to use")
 	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
 	rootCmd.MarkFlagsMutuallyExclusive("hash-func", "algorithm")
 	rootCmd.CompletionOptions.DisableDefaultCmd = true

@@ -21,7 +21,7 @@ func (h *hashFunctionFlag) String() string {
 	return h.hashFunction
 }
 func (h *hashFunctionFlag) Type() string {
-	return ""
+	return "<hash function>"
 }
 
 func (h *hashFunctionFlag) Set(s string) error {
