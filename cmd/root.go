@@ -7,8 +7,6 @@ import (
 	"os"
 )
 
-// flags
-
 var rootCmd = &cobra.Command{
 	Use:     "lmchecksum <file> <checksum>",
 	Short:   "CLI tool for checking the validity of a checksum",
@@ -45,9 +43,9 @@ func Execute() {
 func init() {
 	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
 	rootCmd.AddCommand(Command)
-	rootCmd.Flags().VarP(&hfFlag, "hash-func", "f", "set the hash function to use")
+	rootCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
 	rootCmd.Flags().Var(&hfFlag, "algorithm", "set the hash function to use")
-	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-func instead")
-	rootCmd.MarkFlagsMutuallyExclusive("hash-func", "algorithm")
+	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-function instead")
+	rootCmd.MarkFlagsMutuallyExclusive("hash-function", "algorithm")
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
 }
