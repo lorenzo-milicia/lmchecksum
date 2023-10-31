@@ -3,7 +3,6 @@ package cmd
 import (
 	"crypto"
 	"errors"
-	"fmt"
 	"regexp"
 	"slices"
 	"strings"
@@ -27,7 +26,7 @@ func (h *hashFunctionFlag) Type() string {
 func (h *hashFunctionFlag) Set(s string) error {
 	ha := HashNamesMap[s]
 	if !slices.Contains(AvailableHashFunctions, uint(ha)) {
-		return errors.New(fmt.Sprintf("hash function %v not availalble", s))
+		return errors.New("use \"lmchecksum list\" for the list of available functions")
 	}
 	h.hashFunction = s
 	return nil
