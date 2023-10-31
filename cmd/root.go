@@ -3,7 +3,7 @@ package cmd
 import (
 	"fmt"
 	"github.com/spf13/cobra"
-	"go.lorenzomilicia.dev/libs/checksum"
+	"go.lorenzomilicia.dev/libs/checksum/v2"
 	"os"
 )
 
@@ -25,7 +25,11 @@ func lmchecksum(_ *cobra.Command, args []string) error {
 		return err
 	}
 	hf := HashNamesMap[hfFlag.hashFunction]
-	if res := checksum.Checksum(file, checksumArg, hf); res == true {
+	res, err := checksum.Validate(file, checksumArg, hf)
+	if err != nil {
+		return err
+	}
+	if res == true {
 		fmt.Println("[✓] The checksum matches")
 	} else {
 		fmt.Println("[x] The checksum doesn't match")

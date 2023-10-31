@@ -4,7 +4,7 @@ go 1.21
 
 require (
 	github.com/spf13/cobra v1.7.0
-	go.lorenzomilicia.dev/libs/checksum v1.0.0
+	go.lorenzomilicia.dev/libs/checksum/v2 v2.0.0-beta
 )
 
 require (
