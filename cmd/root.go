@@ -2,9 +2,10 @@ package cmd
 
 import (
 	"fmt"
+	"os"
+
 	"github.com/spf13/cobra"
 	"go.lorenzomilicia.dev/libs/checksum/v2"
-	"os"
 )
 
 var rootCmd = &cobra.Command{
@@ -46,7 +47,7 @@ func Execute() {
 
 func init() {
 	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
-	rootCmd.AddCommand(Command)
+	rootCmd.AddCommand(ListCommand)
 	rootCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
 	rootCmd.Flags().Var(&hfFlag, "algorithm", "set the hash function to use")
 	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-function instead")
