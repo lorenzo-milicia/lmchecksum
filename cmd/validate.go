@@ -18,9 +18,6 @@ var validateCmd = &cobra.Command{
 
 func initValidate() {
 	rootCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
-	rootCmd.Flags().Var(&hfFlag, "algorithm", "set the hash function to use")
-	_ = rootCmd.Flags().MarkDeprecated("algorithm", "use --hash-function instead")
-	rootCmd.MarkFlagsMutuallyExclusive("hash-function", "algorithm")
 }
 
 func validate(_ *cobra.Command, args []string) error {
