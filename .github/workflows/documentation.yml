@@ -1,8 +1,6 @@
 name: Build documentation
 
 on:
-  # If specified, the workflow will be triggered automatically once you push to the `main` branch.
-  # Replace `main` with your branch’s name
   release:
     types: [ "released" ]
 
@@ -31,6 +29,7 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v3
+        ref: 'docs/v1'
 
       - name: Build Writerside docs using Docker
         uses: JetBrains/writerside-github-action@v4
