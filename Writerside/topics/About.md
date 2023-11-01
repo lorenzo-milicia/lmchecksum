@@ -13,7 +13,7 @@ go install go.lorenzomilicia.dev/%product%@%version%
 To quickly check the validity of a *SHA-256* checksum, use
 
 ```
-lmchecksum <file> <checksum>
+lmchecksum validate <file> <checksum>
 ```
 
 For the full commands guide check the [commands section](Commands.md).

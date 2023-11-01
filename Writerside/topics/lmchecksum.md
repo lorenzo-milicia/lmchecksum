@@ -1,24 +1,21 @@
 # lmchecksum
 
-Command for checking the validity of a checksum
+## Sub-commands
 
 ```
-lmchecksum <file> <checksum> [flags]
+
+validate  Check the validity of a checksum
+list	  Print list of available hash functions
 ```
 
 ## Options
 
-<code-block>
-      --hash-function &lt;hash function&gt;   set the hash function to use (default sha256)
-  -h, --help                            help for lmchecksum
-  -v, --version                         version for lmchecksum
-</code-block>
+```
+  -h, --help     help for lmchecksum
+  -v, --version  version for lmchecksum
+```
 
->The option `--algorithm` still works as an alias for the new `--hash-function`
-option, but it is marked as deprecated and will be removed in the next major release.
+### SEE ALSO
 
-{style="warning"}
-
-### See also
-
-* [lmchecksum list](lmchecksum-list.md)     - Print list of available hash functions
+* [lmchecksum list](lmchecksum_list.md)	 - Print list of available hash functions
+* [lmchecksum validate](lmchecksum_validate.md)	 - Check the validity of a checksum

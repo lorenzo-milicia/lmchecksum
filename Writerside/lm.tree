@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE instance-profile
+        SYSTEM "https://resources.jetbrains.com/writerside/1.0/product-profile.dtd">
+
+<instance-profile id="lm"
+                 name="lmchecksum"
+                 start-page="About.md">
+
+    <toc-element topic="About.md"/>
+    <toc-element topic="Examples.md"/>
+    <toc-element topic="Commandsv2.md">
+        <toc-element topic="lmchecksum.md"/>
+        <toc-element topic="lmchecksum_list.md"/>
+        <toc-element topic="lmchecksum_validate.md"/>
+    </toc-element>
+    <toc-element topic="v1.md">
+        <toc-element topic="Commands.md">
+            <toc-element topic="lmchecksum-v1.md"/>
+            <toc-element topic="lmchecksum-list-v1.md"/>
+        </toc-element>
+    </toc-element>
+</instance-profile>

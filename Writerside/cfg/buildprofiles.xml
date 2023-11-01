@@ -4,9 +4,12 @@
         <primary-color>frozen</primary-color>
         <color-preset>Soft</color-preset>
     </variables>
-    <build-profile instance="cc"/>
+    <build-profile instance="lm">
+        <variables>
+            <noindex-content>true</noindex-content>
+        </variables>
+    </build-profile>
         <footer>
-            <social type="blog" href="https://github.com/lorenzo-milicia/lmchecksum"></social>
             <link href="https://github.com/lorenzo-milicia/lmchecksum">GitHub repository</link>
         </footer>
 </buildprofiles>
