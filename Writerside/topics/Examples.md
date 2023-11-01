@@ -14,4 +14,4 @@ $ lmchecksum %version%.tar.gz a1a2cc03f7aa392fe03109aeceeaec396c4fb0dd1f58c0e5b5
 $ lmchecksum %version%.tar.gz "a wrong checksum"                                                
 [x] The checksum doesn't match
 ```
-{collapsible="true"}
+{collapsible="true" collapsed-title="lmchecksum"}
