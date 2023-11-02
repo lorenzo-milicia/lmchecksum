@@ -9,7 +9,7 @@ import (
 )
 
 var validateCmd = &cobra.Command{
-	Use:   "validate",
+	Use:   "validate <file> <checksum>",
 	Short: "Check the validity of a checksum",
 	Long:  "Check the validity of a checksum",
 	Args:  cobra.ExactArgs(2),
