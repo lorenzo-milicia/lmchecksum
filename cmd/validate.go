@@ -17,7 +17,7 @@ var validateCmd = &cobra.Command{
 }
 
 func initValidate() {
-	rootCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
+	validateCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
 }
 
 func validate(_ *cobra.Command, args []string) error {
