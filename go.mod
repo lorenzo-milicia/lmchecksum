@@ -1,10 +1,10 @@
-module go.lorenzomilicia.dev/lmchecksum
+module go.lorenzomilicia.dev/lmchecksum/v2
 
 go 1.21
 
 require (
 	github.com/spf13/cobra v1.7.0
-	go.lorenzomilicia.dev/libs/checksum/v2 v2.0.0-beta
+	go.lorenzomilicia.dev/libs/checksum/v2 v2.0.0
 )
 
 require (

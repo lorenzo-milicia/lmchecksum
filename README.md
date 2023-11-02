@@ -6,14 +6,14 @@
 
 You can install `lmchecksum` using `go install`:
 ```Bash
-go install go.lorenzomilicia.dev/lmchecksum@v1.1.0
+go install go.lorenzomilicia.dev/lmchecksum@v2.0.0
 ```
 
-## How to use
+## Checksum validation
+To check the validity of a checksum run the command:
 
-The command to run is:
 ```Bash
-lmchecksum <file name> <checksum>
+lmchecksum validate <file name> <checksum>
 ```
 > The default hashing function used is *SHA-256*
 
