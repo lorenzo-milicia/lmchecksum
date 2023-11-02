@@ -2,10 +2,6 @@
 
 Print list of available hash functions
 
-## Synopsis
-
-Print list of available hash functions
-
 ```
 lmchecksum list [flags]
 ```
@@ -16,6 +12,6 @@ lmchecksum list [flags]
   -h, --help   help for list
 ```
 
-### SEE ALSO
+### See also
 
 * [lmchecksum](lmchecksum.md)	 - CLI tool for checking the validity of a checksum

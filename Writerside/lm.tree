@@ -8,15 +8,17 @@
 
     <toc-element topic="About.md"/>
     <toc-element topic="Examples.md"/>
-    <toc-element topic="Commandsv2.md">
+    <toc-element topic="Commands-v2.md">
         <toc-element topic="lmchecksum.md"/>
         <toc-element topic="lmchecksum_list.md"/>
         <toc-element topic="lmchecksum_validate.md"/>
     </toc-element>
-    <toc-element topic="v1.md">
-        <toc-element topic="Commands.md">
-            <toc-element topic="lmchecksum-v1.md"/>
-            <toc-element topic="lmchecksum-list-v1.md"/>
+    <toc-element topic="Older-versions.md">
+        <toc-element topic="v1.md">
+            <toc-element topic="Commands-v1.md">
+                <toc-element topic="lmchecksum-v1.md"/>
+                <toc-element topic="lmchecksum-list-v1.md"/>
+            </toc-element>
         </toc-element>
     </toc-element>
 </instance-profile>

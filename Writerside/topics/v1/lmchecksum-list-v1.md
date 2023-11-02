@@ -10,4 +10,4 @@ lmchecksum list
 
 ### See also
 
-* [lmchecksum](lmchecksum.md)	 - CLI tool for checking the validity of a checksum
+* [lmchecksum](../lmchecksum.md)	 - CLI tool for checking the validity of a checksum
