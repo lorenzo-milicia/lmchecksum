@@ -1,4 +1,4 @@
-# Commands
+# Commands (%v1%)
 
-* [`lmchecksum`](../lmchecksum.md)
-* [`lmchecksum list`](lmchecksum-list.md)
+* [`lmchecksum`](lmchecksum-v1.md)
+* [`lmchecksum list`](lmchecksum-list-v1.md)

@@ -1,4 +1,4 @@
-# lmchecksum list
+# lmchecksum list (%v1%)
 
 Prints the list of available hash functions
 
@@ -10,4 +10,4 @@ lmchecksum list
 
 ### See also
 
-* [lmchecksum](../lmchecksum.md)	 - CLI tool for checking the validity of a checksum
+* [lmchecksum](lmchecksum-v1.md)	 - CLI tool for checking the validity of a checksum

@@ -1,4 +1,4 @@
-# lmchecksum
+# lmchecksum (%v1%)
 
 Command for checking the validity of a checksum
 
@@ -21,4 +21,4 @@ option, but it is marked as deprecated and will be removed in the next major rel
 
 ### See also
 
-* [lmchecksum list](lmchecksum-list.md)     - Print list of available hash functions
+* [lmchecksum list](lmchecksum-list-v1.md)     - Print list of available hash functions

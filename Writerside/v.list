@@ -3,4 +3,5 @@
 <vars>
     <var name="product" value="lmchecksum"/>
     <var name="version" value="v2.0.0"/>
+    <var name="v1" value="v1.1.0"/>
 </vars>
