@@ -6,7 +6,7 @@
 
 You can install `lmchecksum` using `go install`:
 ```Bash
-go install go.lorenzomilicia.dev/lmchecksum@v2.0.0
+go install go.lorenzomilicia.dev/lmchecksum/v2@v2.0.0
 ```
 
 ## Checksum validation
