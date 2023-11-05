@@ -8,7 +8,7 @@ import (
 	"go.lorenzomilicia.dev/libs/checksum/v2"
 )
 
-var validateCmd = &cobra.Command{
+var ValidateCmd = &cobra.Command{
 	Use:   "validate <file> <checksum>",
 	Short: "Check the validity of a checksum",
 	Long:  "Check the validity of a checksum",
@@ -17,7 +17,7 @@ var validateCmd = &cobra.Command{
 }
 
 func initValidate() {
-	validateCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
+	ValidateCmd.Flags().Var(&hfFlag, "hash-function", "set the hash function to use")
 }
 
 func validate(_ *cobra.Command, args []string) error {

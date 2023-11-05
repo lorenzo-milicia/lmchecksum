@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-var ListCommand = &cobra.Command{
+var ListCmd = &cobra.Command{
 	Use:   "list",
 	Short: "Print list of available hash functions",
 	Long:  "Print list of available hash functions",

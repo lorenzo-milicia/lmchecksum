@@ -23,9 +23,11 @@ func Execute() {
 }
 
 func init() {
-	rootCmd.AddCommand(validateCmd)
-	rootCmd.AddCommand(ListCommand)
+	rootCmd.AddCommand(ValidateCmd)
+	rootCmd.AddCommand(ListCmd)
+	rootCmd.AddCommand(HashCmd)
 	rootCmd.SetVersionTemplate(fmt.Sprintf("lmchecksum v%v\n", rootCmd.Version))
 	rootCmd.CompletionOptions.DisableDefaultCmd = true
 	initValidate()
+	initHash()
 }
