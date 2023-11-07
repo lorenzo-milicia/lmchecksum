@@ -12,13 +12,13 @@ go install go.lorenzomilicia.dev/lmchecksum/v2@latest
 ## Checksum validation
 To check the validity of a checksum run the command:
 
-```Bash
+```
 lmchecksum validate <file name> <checksum>
 ```
 
 ## Hash generation
 To generate the hash of a given file, use:
-```Bash
+```
 lmchecksum hash <file name>
 ```
 
