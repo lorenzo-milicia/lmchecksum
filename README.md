@@ -1,6 +1,6 @@
 # About lmchecksum
 
-`lmchecksum` is a small and simple CLI tool for checking the validity of a checksum.
+`lmchecksum` is a small and simple CLI tool for computing hashes and checking the validity of a checksum.
 
 ## Installation
 
