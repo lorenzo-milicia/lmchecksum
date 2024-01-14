@@ -12,7 +12,7 @@ var rootCmd = &cobra.Command{
 	Short:   "CLI tool for checking the validity of a checksum",
 	Long:    "CLI tool for checking the validity of a checksum",
 	Args:    cobra.NoArgs,
-	Version: "2.0.0",
+	Version: "2.1.0",
 }
 
 func Execute() {
